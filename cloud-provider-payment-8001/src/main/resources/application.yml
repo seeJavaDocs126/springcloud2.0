@@ -16,3 +16,19 @@ spring:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.joyin.cloud.model
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+
+info:
+  app.name: wd-springcloud2.0
+  company.name: com.joyin
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

@@ -20,7 +20,8 @@ import javax.annotation.Resource;
 @RestController
 public class PaymentConsumerController {
 
-    private final String REST_RUL = "http://localhost:8001";
+    //private final String REST_RUL = "http://localhost:8001";
+    private final String REST_RUL = "http://cloud-payment-service";
     @Resource
     private RestTemplate restTemplate;
     final Logger logger = LoggerFactory.getLogger(getClass());

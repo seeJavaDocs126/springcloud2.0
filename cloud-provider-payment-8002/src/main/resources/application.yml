@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -24,11 +24,11 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
   instance:
-    instance-id: payment8001
+    instance-id: payment8002
     prefer-ip-address: true
 
 info:
   app.name: wd-springcloud2.0
   company.name: com.joyin
-  build.artifactId: cloud-provider-payment-8001
-  build.version: 1.0-SNAPSHOT
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
