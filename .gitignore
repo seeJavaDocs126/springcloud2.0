@@ -22,3 +22,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/log/output.log
+/log/output.log.1
+/log/output.log.2
