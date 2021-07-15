@@ -33,7 +33,7 @@ public class PaymnetController {
 
     @PostMapping(value = "/payment/add")
     public CommonResult<Integer> add(@RequestBody Payment payment){
-        if (payment.getSerial() == null) {
+        if (payment.getModuleid() == null) {
             return new CommonResult<Integer>(444, "serverPort:" + serverPort + "|->插入数据库失败", null);
         }
         int result = paymentService.add(payment);
@@ -45,14 +45,14 @@ public class PaymnetController {
         }
     }
 
-    @GetMapping(value = "/payment/get/{id}")
-    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
-        Payment payment = paymentService.findById(id);
+    @GetMapping(value = "/payment/get/{dbid}")
+    public CommonResult<Payment> getPaymentById(@PathVariable("dbid") Long dbid) {
+        Payment payment = paymentService.findById(dbid);
         logger.info("*****查询结果：" + payment);
         if (payment != null) {  //说明有数据，能查询成功
             return new CommonResult<>(200, "serverPort:" + serverPort + "|->查询成功", payment);
         } else {
-            return new CommonResult<Payment>(444, "serverPort:" + serverPort + "|->没有对应记录，查询ID：" + id, null);
+            return new CommonResult<Payment>(444, "serverPort:" + serverPort + "|->没有对应记录，查询ID：" + dbid, null);
         }
     }
 

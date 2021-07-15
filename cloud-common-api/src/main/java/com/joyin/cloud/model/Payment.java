@@ -18,6 +18,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class Payment implements Serializable {
-    private Long id;
-    private String serial;
+    private Long dbid;
+    private String moduleid;
+    private String modulename;
+    private String dbsource;
 }
